@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Open+Sans:wght@300&family=Oswald:wght@200;700&display=swap" rel="stylesheet"> -->
+    <title>Book Store</title>
+  </head>
+
+  <body onload="onInit()">
+
+
+    <div class="top-line">
+      <h1 data-trans="book-store">Book Store</h1>
+      <div class="display-options ">
+        <select
+        class="btn btn-warning"
+         onchange="onSetLang(this.value)">
+          <option value="en">English</option>
+          <option value="he">עברית</option>
+          </select>
+          <button class="btn btn-primary" data-trans="toggle-layout" onclick="onChangeLayout()">
+            Toggle Layout
+          </button>
+      </select>      
+      </div>
+    </div>
+    
+    
+    
+
+    
+    <section class="book-filter">
+
+      <input class="col "
+      type="search" data-trans="type-something"
+      oninput="onSetFilterByTxt(this.value)"
+      placeholder ="Type something..."
+    />
+
+      <section class="range" >
+        <div class="filter-ui">
+          <p><span data-trans="max-price">Max price: </span><span class="pricing">50</span></p>
+          <label for="customRange1" class="form-label">
+            <input
+              type="range"
+              min="20"
+              max="100"
+              value="50"
+              class="filter-price-range"
+              onchange="this.title=this.value;onSetFilterBy({price: this.value})"
+            />
+          </label>
+        </div>
+        <div class="filter-ui">
+          <p><span data-trans=min-rating>Min rating: </span><span class="rating">5</span></p>
+          <!-- <h2 class="rating">5</h2>  -->
+          <label>
+            <input
+              type="range"
+              min="0"
+              max="10"
+              value="5"
+              class="filter-rating-range"
+              onchange="this.title=this.value;onSetFilterBy({rating: this.value})"
+            />
+          </label>
+        </div>
+      </section>
+
+     
+    </section>
+
+    
+    <button class="btn btn-primary" data-trans='add-book' onclick="OnToggleAdd()">
+      Add Book</button>
+
+    <form class="newInput hidden" onsubmit="OnAddBook()">
+      <div class="row">
+        <div class="col">
+      <input required name="el" type="text" placeholder="Title" />
+    </div>
+    <div class="col">
+      <input required name="he" type="text" placeholder="שם" />
+    </div>
+
+    <div class="col">
+      <input data-trans="price"
+        required
+        name="price"
+        type="number"
+        min="1"
+        max="100"
+        placeholder="Price"
+      />
+    </div>
+    <div class="col">
+      <button>+</button>
+    </div>
+    </form>
+  </div>
+
+    <div class="content"></div>
+
+    <div class="navButtons"></div>
+
+    
+
+   
+<!-- Modal -->
+<div class="modal fade" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-price"></h4>
+        <div class="modal-rating"></div>
+      </div>
+
+      <img class="modalCover" src="images/1.jpg" alt="book cover" />
+    </section>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/popper/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/book.controller.js"></script>
+    <script src="js/service/book.service.js"></script>
+    <script src="js/service/utils.service.js"></script>
+    <script src="js/service/translate.service.js"></script>
+    <script src="js/service/storage.service.js"></script>
+    
+  </body>
+</html>

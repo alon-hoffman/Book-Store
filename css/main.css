@@ -1,0 +1,114 @@
+body {
+  margin: 60px;
+  align-items: center;
+  overflow: auto;
+  text-align: start;
+}
+
+body.rtl .display-options {
+  right: 0;
+}
+
+.top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input[type="search"] {
+  margin-block-end: 5px;
+  /* margin-inline-start: 50px; */
+}
+
+.filter-ui {
+  margin-inline-end: 50px;
+}
+
+body.rtl {
+  direction: rtl;
+}
+
+.range {
+  display: flex;
+}
+
+.dynamicRating {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  border: none;
+}
+
+table {
+  margin-block-start: 50px;
+}
+
+.modal-rating {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+  width: 250px;
+  height: 370px;
+  box-shadow: 5px 5px 20px hsl(210, 3%, 46%);
+  margin: 30px;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card img {
+  /* width: 170px; */
+  height: 200px;
+}
+
+.duo-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* .card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+} */
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+thead {
+  background-color: rgb(51, 122, 183);
+  color: white;
+}
+
+thead:hover {
+  background-color: rgb(40, 96, 144);
+  cursor: pointer;
+}
+
+[type="search"] {
+  width: 45vw;
+}
